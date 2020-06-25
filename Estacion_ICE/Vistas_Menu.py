@@ -1,4 +1,3 @@
-
 class Menus_Vistas:
 
     def __init__ (self):
