@@ -1,6 +1,7 @@
 from Vistas_Menu import Menus_Vistas
 from Operador.Operador_Control import Operador_Control
 from SubEstacion.SubEstacion_Control import SubEstacion_Control
+from Estacion.Estacion_Control import Estacion_Control
 from BD import BD
 import msvcrt
 
@@ -11,6 +12,7 @@ class Ejecucion_Sistema_Control:
     Obj_VistaMenu = Menus_Vistas()
     Obj_OpControl = Operador_Control()
     Obj_SubEstControl = SubEstacion_Control ()
+    Obj_EstacionControl = Estacion_Control()
     ObjBD = BD()
 
     def __init__(self):
@@ -42,6 +44,10 @@ class Ejecucion_Sistema_Control:
                         CNX = self.ObjBD.SQLLite_Create_DB()        #Se abre la CNX a BD
                         self.ObjBD.Insertar_New_Row(CNX,Operador)   #Y se envía a guardar a BD el valor que retorno el Operador
                         self.Obj_SubEstControl.AgregarSubEstacion() #Se solicita la SubEstacion
+                    self.Obj_EstacionControl.Continuar()
+                    self.Obj_EstacionControl.ControlDatos()
+                    self.Obj_EstacionControl.QuitarResumen()
+                    
                 else:
                     if Entrada_Usuario == 'S':  #Flujo en S
                         self.Obj_VistaMenu.DiezLineas()
