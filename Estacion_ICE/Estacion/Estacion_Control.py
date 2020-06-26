@@ -62,8 +62,8 @@ class Estacion_Control:
         for Key in self.Horas_Ciudades:
             print("")
             print("Ciudad: ", Key)
-            print("Mayor hora de consumo: {} con un total para esa hora: {}".format(self.Horas_Ciudades[Key], self.Consumo_Ciudades[Key]))
-            print("Consumo acumulado de ciudad: ", self.Consumo_Total_Ciudad[Key])
+            print("Mayor hora de consumo: {} (Formato 24h) con un total para esa hora: {} KW".format(self.Horas_Ciudades[Key], self.Consumo_Ciudades[Key]))
+            print("Consumo acumulado en KW de ciudad: ", self.Consumo_Total_Ciudad[Key])
             print("")
             print("--------------------------------------------------")
 
