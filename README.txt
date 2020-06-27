@@ -19,4 +19,5 @@ Ademas realiza validaciones de los datos ingresados por el usuario para disminui
 las validaciones de errores
 
 OTRAS NOTAS:
+*******EL ARCHIVO CSV DEBE DE ESTAR EN EL DIRECTORIO Taller3_PA junto al archivo README*******
 El programa no ocupa instalar nada adicional, ya que lo que se necesita se utiliza como importaciones
