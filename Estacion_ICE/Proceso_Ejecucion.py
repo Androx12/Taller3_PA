@@ -37,13 +37,18 @@ class Ejecucion_Sistema_Control:
                     if ValorBD: #Si ese retorno contiene valores en lista
                         self.Obj_VistaMenu.DiezLineas()
                         print('Bienvenido de nuevo: ', ValorBD)
-                        self.Obj_SubEstControl.AgregarSubEstacion() #Solo se solicita la SubEstacion
+                        SubEstacion = self.Obj_SubEstControl.AgregarSubEstacion() #Solo se solicita la SubEstacion
+                        self.Obj_VistaMenu.DiezLineas()
+                        print("Estudio realizado por el operador {} de la Sub Estación {}".format(ValorBD, SubEstacion))
                     else:
                         self.Obj_VistaMenu.DiezLineas()                   #Si no existe se llama el 'Control Operador'
                         Operador = [self.Obj_OpControl.AgregarOperador()] #y su retorno se guarda en una lista
                         CNX = self.ObjBD.SQLLite_Create_DB()        #Se abre la CNX a BD
                         self.ObjBD.Insertar_New_Row(CNX,Operador)   #Y se envía a guardar a BD el valor que retorno el Operador
-                        self.Obj_SubEstControl.AgregarSubEstacion() #Se solicita la SubEstacion
+                        SubEstacion = self.Obj_SubEstControl.AgregarSubEstacion() #Se solicita la SubEstacion
+                        self.Obj_VistaMenu.DiezLineas()
+                        print("Estudio realizado por el operador {} de la Sub Estación {}".format(Operador, SubEstacion))
+                    
                     self.Obj_EstacionControl.Continuar()
                     self.Obj_EstacionControl.ControlDatos()
                     self.Obj_EstacionControl.QuitarResumen()

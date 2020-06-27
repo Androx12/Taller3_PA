@@ -14,15 +14,24 @@ class Operador_Control:
     def AgregarOperador (self):     
         try:
             print("\n")
-            DatosNuevoOperador = input("* Ingrese el nombre del Operador: --> \n") #Se solicita entrada al Usuario
-            print("\n")
-            print("\n")
-            print("\n")
-            print("\n")
-            print("\n")
-            NuevoOperador = Operador_Modelo(DatosNuevoOperador) #Se envia a la clase Modelo Operador
-            self.AgregarOperadorLista(NuevoOperador)    #Se ejecuta el metodo para agregarlo a lista
-            return DatosNuevoOperador   #Retorna el valor que se ingreso como str pero afuera se trasforma a list
+            Bandera = True
+            while Bandera == True:
+                DatosNuevoOperador = input("* Ingrese el nombre del Operador: --> \n") #Se solicita entrada al Usuario
+                if DatosNuevoOperador == "":
+                    print("\n")
+                    print("No puede ingresar un valor vacío")
+                    print("\n")
+                    Bandera = True
+                else:
+                    Bandera = False
+                    print("\n")
+                    print("\n")
+                    print("\n")
+                    print("\n")
+                    print("\n")
+                    NuevoOperador = Operador_Modelo(DatosNuevoOperador) #Se envia a la clase Modelo Operador
+                    self.AgregarOperadorLista(NuevoOperador)    #Se ejecuta el metodo para agregarlo a lista
+                    return DatosNuevoOperador   #Retorna el valor que se ingreso como str pero afuera se trasforma a list
         except:
             print("Error en la entrada del usuario") 
 

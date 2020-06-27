@@ -68,7 +68,6 @@ class Estacion_Control:
             print("--------------------------------------------------")
 
     def Continuar(self):
-        self.ObjEstacionVistas.DiezLineas()
         print("--------------------------------------------------")
         print("El documento a revisar registra un conteo de {} ciudades.".format(self.ConteoCiudades()))
         print("")
